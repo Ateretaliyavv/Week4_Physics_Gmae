@@ -4397,10 +4397,6 @@ MonoBehaviour:
   jumpForce: 10
   minRunSpeedForBoost: 1
   maxExtraJumpForce: 4
-  superJumpForceMultiplier: 1.5
-  superJumpBoostMultiplier: 1.5
-  weakJumpForceMultiplier: 0.6
-  weakJumpBoostMultiplier: 0.6
   moveRight:
     m_Name: Move Right
     m_Type: 1
@@ -4457,6 +4453,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  jumpModifier: {fileID: 0}
 --- !u!70 &1961317062
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

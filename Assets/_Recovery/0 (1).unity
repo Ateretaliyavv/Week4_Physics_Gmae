@@ -2605,6 +2605,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1204053692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6866166372681928405, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
+  m_PrefabInstance: {fileID: 1405315596456466957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1204053697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204053692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ef8f526bf782542b0439dd92aef49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleWeakJump
+  triggeringTag: Player
+  powerDuration: 2
 --- !u!1 &1215637230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,6 +4393,7 @@ GameObject:
   - component: {fileID: 1961317061}
   - component: {fileID: 1961317065}
   - component: {fileID: 1961317066}
+  - component: {fileID: 1961317067}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4397,10 +4417,6 @@ MonoBehaviour:
   jumpForce: 10
   minRunSpeedForBoost: 1
   maxExtraJumpForce: 4
-  superJumpForceMultiplier: 1.5
-  superJumpBoostMultiplier: 1.5
-  weakJumpForceMultiplier: 0.6
-  weakJumpBoostMultiplier: 0.6
   moveRight:
     m_Name: Move Right
     m_Type: 1
@@ -4457,6 +4473,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  jumpModifier: {fileID: 0}
 --- !u!70 &1961317062
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4570,6 +4587,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GotoNextScene
   triggeringTag: LoseObject
   sceneName: GameOverScene
+--- !u!114 &1961317067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961317060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f0a230225adb3448ced4cd5e1d8226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpModifier
+  superJumpMultiplier: 1.7
+  weakJumpMultiplier: 0.5
 --- !u!1 &1987628962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,6 +5041,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4877356060031711868, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
+      propertyPath: powerDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6866166372681928405, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
       propertyPath: m_Name
       value: WeakJump
@@ -5054,10 +5089,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4877356060031711868, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6866166372681928405, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1204053697}
   m_SourcePrefab: {fileID: 100100000, guid: aa0ea16497bfa5340b6d79fe34b0fbfa, type: 3}
 --- !u!1001 &3049215955755509194
 PrefabInstance:
